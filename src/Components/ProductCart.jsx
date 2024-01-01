@@ -1,13 +1,6 @@
 import React from 'react';
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBCardImage,
-    MDBBtn,
-    MDBContainer,
-    MDBRow,
+    MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBContainer, MDBRow,
     MDBCol
 } from 'mdb-react-ui-kit';
 import { useSelector } from 'react-redux';
@@ -17,7 +10,7 @@ export default function App() {
     const items = useSelector((state)=>state.cart)
 
     return (
-        <div className='m-2'>
+        <div class='m-2'>
             <MDBContainer>
             <MDBRow className='mb-3'>
             <MDBCol size='4'>
