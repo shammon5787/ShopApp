@@ -3,28 +3,33 @@ import {
     MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBContainer, MDBRow,
     MDBCol
 } from 'mdb-react-ui-kit';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../feature/cartSlice';
 
 export default function App() {
     
-    const items = useSelector((state)=>state.cart)
+    const items = useSelector((state)=>state.allCart.items);
+    const dispetch = useDispatch();
 
     return (
-        <div class='m-2'>
+        <div className='m-2'>
             <MDBContainer>
             <MDBRow className='mb-3'>
-            <MDBCol size='4'>
-                <MDBCard>
-                    <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+
+           { 
+            items.map((item)=>(
+           <MDBCol size='md'>
+                <MDBCard key={item.id} style={{backgroundColor: 'blue', color:'white', alignItems:'center', justifyContent:'space-between', textAlign:'center'}}>
+                    <MDBCardImage style={{width: '230px', height: '250px', margin:'5px', }}  src={item.img} position='top' alt='...' />
                     <MDBCardBody>
-                        <MDBCardTitle>Card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
-                        <MDBBtn href='#'>Button</MDBBtn>
+                        <MDBCardTitle>{item.title}</MDBCardTitle>
+                        <MDBCardText>{item.price}</MDBCardText>
+                        <MDBBtn onClick={()=>dispetch(addToCart(item))}>Add To Cart</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
                 </MDBCol>
+                ))
+                }
                 </MDBRow>
             </MDBContainer>
 
