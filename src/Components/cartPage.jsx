@@ -20,7 +20,7 @@ const CartPage = () => {
                                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
                                                     className="w-100" alt="Blue Jeans Jacket" />
                                                 <a href="#!">
-                                                    <div className="mask" style={{backgroundColor:'red'}}></div>
+                                                    <div className="mask" style={{backgroundColor:'transparent'}}></div>
                                                 </a>
                                             </div>
                                         </div>

@@ -18,8 +18,8 @@ export default function App() {
 
            { 
             items.map((item)=>(
-           <MDBCol size='md'>
-                <MDBCard key={item.id} style={{backgroundColor: 'blue', color:'white', alignItems:'center', justifyContent:'space-between', textAlign:'center'}}>
+           <MDBCol size='md' key={item.id}>
+                <MDBCard style={{backgroundColor: 'blue',margin:'3px', color:'white', alignItems:'center', justifyContent:'space-between', textAlign:'center'}}>
                     <MDBCardImage style={{width: '230px', height: '250px', margin:'5px', }}  src={item.img} position='top' alt='...' />
                     <MDBCardBody>
                         <MDBCardTitle>{item.title}</MDBCardTitle>
