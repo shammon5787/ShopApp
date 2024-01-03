@@ -5,6 +5,8 @@ import {
 } from 'mdb-react-ui-kit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../feature/cartSlice';
+import Button from './Button';
+import propP from '../props';
 
 export default function App() {
     
@@ -31,7 +33,16 @@ export default function App() {
                 ))
                 }
                 </MDBRow>
-            </MDBContainer>
+            </MDBContainer><Button buttonText="SHowasdfmaklsmdaslsmd Time"/>
+
+            <div className="mainbutton" style={{textAlign:'center'}} >
+                <div className="Child"> <Button buttonText="SHow Time" bgcolor="red"/></div>
+                <div className="Child"> <Button buttonText="Show Date" bgcolor="green" /></div>
+                <div className="Child"> <Button buttonText="Merged" fontSize={"30px"}/></div>
+            </div>
+            <div className="mainbutton" style={{textAlign:'center'}} >
+                <div className="Child"> <propP name="SHow Time" bgcolor="yello"/></div>
+            </div>
 
         </div>
     );
